@@ -1,0 +1,24 @@
+{
+    "name": "rukavishnikov/psr-log",
+    "type": "library",
+    "description": "A PSR-3 logger interface implementation",
+    "keywords": ["php", "psr", "psr-3", "logger"],
+    "homepage": "https://github.com/Ilya-Ruk/psr-log",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Ilya Rukavishnikov",
+            "email": "ilya-ndt@mail.ru"
+        }
+    ],
+    "require": {
+        "php": ">=8.0",
+        "psr/log": "^3.0",
+        "rukavishnikov/php-helper-classes": "^0.1.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Rukavishnikov\\Psr\\Log\\": "src/"
+        }
+    }
+}
