@@ -42,7 +42,7 @@ final class Log implements LoggerInterface
             );
         }
 
-        $this->messages[] = new LogMessage($level, $message, $context);
+        $this->messages[] = new LogMessage($level, (string)$message, $context);
     }
 
     /**
