@@ -4,11 +4,14 @@ declare(strict_types=1);
 
 namespace Rukavishnikov\Psr\Log;
 
-use Psr\Log\AbstractLogger;
+use Psr\Log\LoggerInterface;
+use Psr\Log\LoggerTrait;
 use Stringable;
 
-final class Log extends AbstractLogger
+final class Log implements LoggerInterface
 {
+    use LoggerTrait;
+
     /** @var LogMessage[] $messages */
     private array $messages = [];
 
