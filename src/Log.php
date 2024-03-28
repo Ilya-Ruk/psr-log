@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Rukavishnikov\Psr\Log;
 
+use Psr\Log\InvalidArgumentException;
 use Psr\Log\LoggerInterface;
 use Psr\Log\LoggerTrait;
 use Stringable;
@@ -31,6 +32,16 @@ final class Log implements LoggerInterface
      */
     public function log(mixed $level, string|Stringable $message, array $context = []): void
     {
+        if (!is_string($level)) {
+            throw new InvalidArgumentException(
+                sprintf(
+                    "Level type error (required 'string', but given '%s')!",
+                    gettype($level)
+                ),
+                400
+            );
+        }
+
         $this->messages[] = new LogMessage($level, $message, $context);
     }
 
