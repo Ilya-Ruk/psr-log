@@ -9,8 +9,8 @@ use Rukavishnikov\Psr\Log\LogMessage;
 interface FormatterInterface
 {
     /**
-     * @param LogMessage $message
+     * @param LogMessage $logMessage
      * @return string
      */
-    public function formatMessage(LogMessage $message): string;
+    public function formatMessage(LogMessage $logMessage): string;
 }
