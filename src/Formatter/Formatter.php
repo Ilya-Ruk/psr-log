@@ -42,7 +42,7 @@ final class Formatter implements FormatterInterface
 
         $messageStr = @preg_replace_callback(
             '/{([a-zA-Z0-9_.]+)}/',
-            static function (array $matches) use ($context, $arrayToString) {
+            static function (array $matches) use (&$context, $arrayToString) {
                 $placeholderName = $matches[1];
                 $placeholderValue = $context[$placeholderName] ?? null;
 
