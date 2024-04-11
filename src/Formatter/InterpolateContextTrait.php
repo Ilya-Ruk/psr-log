@@ -11,17 +11,15 @@ trait InterpolateContextTrait
      * @param array $context
      * @return string
      */
-    private function interpolateContext(string $message, array &$context): string
+    private function interpolateContext(string $message, array $context): string
     {
         return @preg_replace_callback(
             '/{([a-zA-Z0-9_.]+)}/',
-            function (array $matches) use (&$context) {
+            function (array $matches) use ($context) {
                 $placeholderName = $matches[1];
 
                 if (array_key_exists($placeholderName, $context)) {
                     $placeholderValue = $context[$placeholderName];
-
-                    unset($context[$placeholderName]);
 
                     return $this->valueToStringHelper->valueToString($placeholderValue);
                 }
