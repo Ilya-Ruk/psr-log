@@ -37,8 +37,7 @@ final class Log implements LoggerInterface
                 sprintf(
                     "Level type error (required 'string', but given '%s')!",
                     gettype($level)
-                ),
-                400
+                )
             );
         }
 

@@ -34,13 +34,13 @@ final class LogTargetFile implements LogTargetInterface
         $fd = @fopen($fileFullName, 'a+');
 
         if ($fd === false) {
-            throw new RuntimeException(sprintf("File '%s' open error!", $fileFullName), 500);
+            throw new RuntimeException(sprintf("File '%s' open error!", $fileFullName));
         }
 
         if (@flock($fd, LOCK_EX) === false) {
             @fclose($fd);
 
-            throw new RuntimeException(sprintf("File '%s' lock error!", $fileFullName), 500);
+            throw new RuntimeException(sprintf("File '%s' lock error!", $fileFullName));
         }
 
         foreach ($messages as $message) {
@@ -52,7 +52,7 @@ final class LogTargetFile implements LogTargetInterface
                 @flock($fd, LOCK_UN);
                 @fclose($fd);
 
-                throw new RuntimeException(sprintf("File '%s' write error!", $fileFullName), 500);
+                throw new RuntimeException(sprintf("File '%s' write error!", $fileFullName));
             }
         }
 

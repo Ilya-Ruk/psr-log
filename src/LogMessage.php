@@ -83,8 +83,7 @@ final class LogMessage
                     "Level '%s' not supported! Level must be in ('%s').",
                     $level,
                     implode("', '", self::LEVELS)
-                ),
-                400
+                )
             );
         }
 
