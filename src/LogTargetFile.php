@@ -16,7 +16,7 @@ final class LogTargetFile implements LogTargetInterface
      */
     public function __construct(
         private FilePath $logPath,
-        private FormatterInterface $formatter
+        private FormatterInterface $formatter,
     ) {
     }
 

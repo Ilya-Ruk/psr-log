@@ -20,7 +20,7 @@ final class Log implements LoggerInterface
      * @param LogTargetInterface $logTarget
      */
     public function __construct(
-        private LogTargetInterface $logTarget
+        private LogTargetInterface $logTarget,
     ) {
         register_shutdown_function(function () {
             $this->saveMessages();
